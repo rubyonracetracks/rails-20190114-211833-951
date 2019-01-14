@@ -36,6 +36,14 @@ class User < ApplicationRecord
          :confirmable, :lockable
   # END: devise section
 
+  # BEGIN: ransack section
+  # Limit the parameters available for searching the user database
+  RANSACKABLE_ATTRIBUTES = %w[email username last_name first_name].freeze
+  def self.ransackable_attributes(_auth_object = nil)
+    RANSACKABLE_ATTRIBUTES + _ransackers.keys
+  end
+  # END: ransack section
+
   # BEGIN: needed to login
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
