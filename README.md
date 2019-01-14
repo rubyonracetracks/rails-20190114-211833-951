@@ -2,6 +2,7 @@
 
 <!--- BEGIN: badges --->
 [![Build Status](https://travis-ci.org/rubyonracetracks/rails-20190114-211833-951.svg?branch=master)](https://travis-ci.org/rubyonracetracks/rails-20190114-211833-951)
+[![codecov](https://codecov.io/gh/rubyonracetracks/rails-20190114-211833-951/branch/master/graph/badge.svg)](https://codecov.io/gh/rubyonracetracks/rails-20190114-211833-951)
 <!--- END: badges --->
 
 Welcome to Generic App Template!
