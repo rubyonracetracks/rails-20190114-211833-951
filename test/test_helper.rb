@@ -11,18 +11,33 @@ SimpleCov.start :rails do
 end
 # END: SimpleCov
 
+# BEGIN: Codecov
+# Run Codecov ONLY in continuous integration.
+# Running Codecov suppresses the display of the test coverage percentage
+# in the terminal screen output.
+if ENV.include? 'CODECOV_TOKEN'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+# END: Codecov
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
 # BEGIN: use minitest-reporters
-require 'minitest/reporters'
-require 'rake_rerun_reporter'
-Minitest::Reporters.use!
+# NOTE: Minitest Reporters is incompatible with CodeCov.
+# Thus, Minitest Reporters is disabled in Travis.
+if ENV['CODECOV_TOKEN'].nil?
+  require 'minitest/reporters'
+  require 'rake_rerun_reporter'
+  Minitest::Reporters.use!
 
-reporter_options = { color: true, slow_count: 5, verbose: false, rerun_prefix: 'rm -f log/test.log && bundle exec' }
-Minitest::Reporters.use! [Minitest::Reporters::HtmlReporter.new,
-                          Minitest::Reporters::RakeRerunReporter.new(reporter_options)]
+  reporter_options = { color: true, slow_count: 5, verbose: false, rerun_prefix: 'rm -f log/test.log && bundle exec' }
+  Minitest::Reporters.use! [Minitest::Reporters::HtmlReporter.new,
+                            Minitest::Reporters::RakeRerunReporter.new(reporter_options)]
+
+end
 # END: use minitest-reporters
 
 class ActiveSupport::TestCase
