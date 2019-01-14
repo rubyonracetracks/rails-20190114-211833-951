@@ -5,6 +5,7 @@
 [![codecov](https://codecov.io/gh/rubyonracetracks/rails-20190114-211833-951/branch/master/graph/badge.svg)](https://codecov.io/gh/rubyonracetracks/rails-20190114-211833-951)
 [![security](https://hakiri.io/github/rubyonracetracks/rails-20190114-211833-951/master.svg)](https://hakiri.io/github/rubyonracetracks/rails-20190114-211833-951/master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3dd01d0492a2006d2cb4/maintainability)](https://codeclimate.com/github/rubyonracetracks/rails-20190114-211833-951/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/61e61c4119a6466fa21a0fc8cb21d293)](https://www.codacy.com/app/jhsu802701/rails-20190114-211833-951?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rubyonracetracks/rails-20190114-211833-951&amp;utm_campaign=Badge_Grade)
 <!--- END: badges --->
 
 Welcome to Generic App Template!
