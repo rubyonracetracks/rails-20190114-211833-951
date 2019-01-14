@@ -1,0 +1,13 @@
+<% require 'email_munger' %>
+
+<% provide(:title, "Admin: #{@admin.first_name} #{@admin.last_name}") %>
+<div class="row">
+  <section class="admin_info">
+    <h1>
+    Admin: <%= @admin.first_name %> <%= @admin.last_name %>
+    </h1>
+    Username: <%= @admin.username %>
+    <br>
+    Email: <%= raw(EmailMunger.encode(@admin.email)) %>
+  </section>
+</div>
